@@ -1,62 +1,8 @@
 {
   "v": 1,
-  "seq": 2,
-  "issued": "2026-09-29T13:06:40.959Z",
+  "seq": 3,
+  "issued": "2026-09-29T13:11:27.652Z",
   "items": [
-    {
-      "id": "test-announcement",
-      "kind": "news",
-      "date": "2026-09-29",
-      "title": "Test announcement, with a picture",
-      "summary": "This is a test of the news feed. If you can read it, news now reaches the app without an update.",
-      "points": [
-        "It came from GitHub as a signed file, and the signature checked out.",
-        "The picture below was downloaded and matched its fingerprint before it was shown.",
-        "You can ignore it. It will be removed."
-      ],
-      "images": [
-        {
-          "src": "https://raw.githubusercontent.com/mindweave-cli/mindweave-news/main/images/test-layout.png",
-          "sha256": "32e91f5d7904ef465e623e4a97e4bf8d86354306fe2842796892514dff9ae9d9",
-          "alt": "A drawing of the app layout",
-          "caption": "A test picture: sessions on the left, the chat on the right."
-        }
-      ],
-      "sections": [
-        {
-          "h": "What this proves",
-          "list": [
-            "News can be published without shipping a new version.",
-            "Pictures, headings and lists all come through.",
-            "The details window opens from the summary."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "test-cli-update",
-      "kind": "update",
-      "area": "cli",
-      "date": "2026-09-28",
-      "title": "Test: a CLI update notice",
-      "summary": "This is how an update for the terminal version will show up here, so you hear about it without opening the terminal.",
-      "points": [
-        "Updates for the app, the core and the CLI all land in this list.",
-        "The CLI ones can offer the exact command to copy."
-      ],
-      "command": "npm install -g mindweave@latest",
-      "sections": [
-        {
-          "h": "Updating the CLI",
-          "text": "Run the command from the summary in any terminal. Your sessions and settings are shared and stay as they are."
-        }
-      ],
-      "link": {
-        "label": "Releases on GitHub",
-        "url": "https://github.com/mindweave-cli/Mindweave/releases"
-      },
-      "images": []
-    },
     {
       "id": "welcome-news",
       "kind": "news",
