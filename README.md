@@ -1,0 +1,46 @@
+# mindweave-news
+
+News, and update notes for the mwcode app, the core and the CLI, shown in the app's **What's new** tab. A CLI update posted here reaches app users as a notification too. mwcode downloads `feed.json` and
+`feed.sig` from this repo, checks the signature against the public key built into the app, and
+shows only what checks out.
+
+## Publishing
+
+1. Edit `source.json` (the only file you write by hand). Put pictures in `images/`
+   (png, jpeg, webp or gif, up to 600 KB each) and refer to them as
+   `{ "file": "images/name.png", "alt": "...", "caption": "..." }`.
+2. From the mwcode-desktop folder: `node news/tools/publish.mjs ../mindweave-news`
+   This checks every item the way the app will, signs the result with your private key, and writes
+   `feed.json` and `feed.sig`.
+3. Commit and push. Users see it the next time their app checks (at startup, then every ~6 hours).
+
+## An item
+
+```json
+{
+  "id": "unique-lowercase-id",
+  "kind": "news",                 // or "update"
+  "area": "app",                  // updates only: app | core | cli
+  "version": "3.1.0",             // updates only, optional
+  "command": "npm install -g mindweave@latest", // cli updates only, optional (this exact shape)
+  "date": "2026-09-29",
+  "title": "Up to 120 characters",
+  "summary": "Up to 400 characters, shown on the card.",
+  "points": ["a few short lines for the summary screen"],
+  "sections": [{ "h": "Heading", "text": "or", "list": ["items"] }],
+  "images": [{ "file": "images/x.png", "alt": "...", "caption": "..." }],
+  "link": { "label": "Full release on GitHub", "url": "https://github.com/..." },
+  "minVersion": "3.0.0",          // optional: only show to this version or newer
+  "maxVersion": "3.2.0",          // optional: only show to this version or older
+  "expires": "2026-12-01"         // optional: stop showing after this date
+}
+```
+
+Text only. Links must be https and on github.com or the mwcode site. To take an item down, delete
+it from `source.json` and publish again.
+
+## Keys
+
+The private key lives at `~/.mwcode-news/private.pem` on the publisher's machine and nowhere else.
+Anyone holding it can put anything in front of every user, so it is never committed, never pasted,
+and it is backed up offline. The public key is `mwcode-desktop/news/feedKey.js`.
