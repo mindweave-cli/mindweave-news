@@ -29,14 +29,15 @@ shows only what checks out.
   "points": ["a few short lines for the summary screen"],
   "sections": [{ "h": "Heading", "text": "or", "list": ["items"] }],
   "images": [{ "file": "images/x.png", "alt": "...", "caption": "..." }],
-  "link": { "label": "Full release on GitHub", "url": "https://github.com/..." },
+  "links": [{ "label": "GitHub", "url": "https://github.com/..." }, { "label": "X", "url": "https://x.com/..." }], // up to 4 buttons
+  "link": { "label": "Full release on GitHub", "url": "https://github.com/..." }, // the release (the "Get X" button)
   "minVersion": "3.0.0",          // optional: only show to this version or newer
   "maxVersion": "3.2.0",          // optional: only show to this version or older
   "expires": "2026-12-01"         // optional: stop showing after this date
 }
 ```
 
-Text only. Links must be https and on github.com or the mwcode site. To take an item down, delete
+Text only. Links must be https and on github.com, x.com or the mwcode site. Without `links`, core and CLI updates get a GitHub button and news gets Website, GitHub and X. To take an item down, delete
 it from `source.json` and publish again.
 
 ## Keys
