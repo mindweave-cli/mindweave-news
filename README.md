@@ -6,7 +6,11 @@ shows only what checks out.
 
 ## Publishing
 
-1. Edit `source.json` (the only file you write by hand). Put pictures in `images/`
+1. Edit `source.json` (the only file you write by hand). **The newest item goes first**: the
+   latest one is always on top in the app. Items are shown by date, newest first, and items from
+   the same day keep the order of this file. App 1.0.0 orders same-day items by id instead, so
+   while it is in use, give same-day items ids that sort the same way (`a-...` for the newest,
+   then `b-...`). Put pictures in `images/`
    (png, jpeg, webp or gif, up to 600 KB each) and refer to them as
    `{ "file": "images/name.png", "alt": "...", "caption": "..." }`.
 2. From the mwcode-desktop folder: `node news/tools/publish.mjs ../mindweave-news`
