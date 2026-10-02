@@ -1,7 +1,7 @@
 {
   "v": 1,
-  "seq": 5,
-  "issued": "2026-10-02T15:02:49.585Z",
+  "seq": 6,
+  "issued": "2026-10-02T15:11:44.952Z",
   "items": [
     {
       "id": "getting-started",
@@ -181,34 +181,6 @@
         "label": "Release on GitHub",
         "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.0.1"
       },
-      "images": []
-    },
-    {
-      "id": "welcome-news",
-      "kind": "news",
-      "date": "2026-09-29",
-      "title": "News from mwcode, without updating",
-      "summary": "Announcements and release notes now reach you here, even between versions.",
-      "points": [
-        "The list is a signed file from GitHub. mwcode only shows it if the signature checks out.",
-        "Nothing about you is sent when it checks.",
-        "You can switch it off at the bottom of this page."
-      ],
-      "sections": [
-        {
-          "h": "What is checked",
-          "list": [
-            "The feed carries a signature made with a key only the mwcode team holds. The app has the matching public key and refuses anything else.",
-            "An older copy of the feed cannot replace a newer one.",
-            "Text only: no scripts, no markup. Links open in your browser and only to github.com or the mwcode site.",
-            "Pictures are used only when their contents match a fingerprint inside the signed feed."
-          ]
-        },
-        {
-          "h": "How often",
-          "text": "At startup and about every six hours while the app is open. If you are offline, the last good copy stays."
-        }
-      ],
       "images": []
     }
   ]
