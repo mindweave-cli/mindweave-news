@@ -1,8 +1,39 @@
 {
   "v": 1,
-  "seq": 8,
-  "issued": "2026-10-02T15:19:06.083Z",
+  "seq": 9,
+  "issued": "2026-10-02T15:55:48.753Z",
   "items": [
+    {
+      "id": "0-mwcode-1-0-1",
+      "kind": "news",
+      "date": "2026-10-02",
+      "title": "mwcode 1.0.1 is out",
+      "summary": "The app now knows which terminal version you really run, and an npm install can be updated without leaving the app.",
+      "points": [
+        "The terminal version is judged by the copy you type in a terminal, not the one inside the app, so you are no longer told about updates you already have.",
+        "Installed it with npm? Press Update and mwcode runs npm for you. No browser, no copying a command.",
+        "Works on Windows, macOS and Linux. The app updates itself: Settings, then About, then Update, then restart."
+      ],
+      "sections": [
+        {
+          "h": "What changed",
+          "list": [
+            "A terminal update notice only shows when the copy you actually run is out of date.",
+            "The terminal that comes with the app moves with the app, so it never shows its own update notice.",
+            "An npm install updates from inside the app. If npm cannot do it, the message says why in plain words, and you can still copy the command.",
+            "On macOS the check waits for your real PATH, so Homebrew and nvm installs are found. On Linux the .deb command is recognised as the app’s own.",
+            "News from the same day now appears in the order it was published, newest on top."
+          ]
+        },
+        {
+          "h": "Getting it",
+          "text": "mwcode checks for a new version shortly after it starts and every few hours. When one is out you will see Update available at the top. Press it, or go to Settings, then About, then Update. Your sessions, settings and keys stay as they are. New downloads from the website are already 1.0.1."
+        }
+      ],
+      "minVersion": "1.0.0",
+      "maxVersion": "1.0.0",
+      "images": []
+    },
     {
       "id": "b-mindweave-3-0-0",
       "kind": "news",
