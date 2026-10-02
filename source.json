@@ -1,34 +1,34 @@
 {
   "items": [
     {
-      "id": "0-mwcode-1-0-1",
+      "id": "0-0-mwcode-1-0-2",
       "kind": "news",
       "date": "2026-10-02",
-      "title": "mwcode 1.0.1 is out",
-      "summary": "The app now knows which terminal version you really run, and an npm install can be updated without leaving the app.",
+      "title": "mwcode 1.0.2 is out",
+      "summary": "Updates now install silently on Windows, the terminal version is judged by the copy you really run, and an npm install updates from inside the app.",
       "points": [
-        "The terminal version is judged by the copy you type in a terminal, not the one inside the app, so you are no longer told about updates you already have.",
-        "Installed it with npm? Press Update and mwcode runs npm for you. No browser, no copying a command.",
-        "Works on Windows, macOS and Linux. The app updates itself: Settings, then About, then Update, then restart."
+        "Updating on Windows no longer shows the installer. If mwcode is installed for all users, Windows asks for permission once, then the update installs quietly and the app reopens.",
+        "The terminal version is judged by the copy you actually run, so you are not told about updates you already have. If you installed it with npm, press Update and mwcode runs npm for you.",
+        "The About page no longer shows a wrong command line version. Update from Settings, then About, or the Update available button at the top."
       ],
       "sections": [
         {
           "h": "What changed",
           "list": [
-            "A terminal update notice only shows when the copy you actually run is out of date.",
-            "The terminal that comes with the app moves with the app, so it never shows its own update notice.",
-            "An npm install updates from inside the app. If npm cannot do it, the message says why in plain words, and you can still copy the command.",
+            "Updates on Windows install silently. One Windows permission prompt for an all-users install, then no setup window.",
+            "A terminal update notice only shows when the copy you run is out of date. The terminal that comes with the app moves with the app.",
+            "An npm install updates from inside the app. If npm cannot do it, the message says why in plain words.",
             "On macOS the check waits for your real PATH, so Homebrew and nvm installs are found. On Linux the .deb command is recognised as the app’s own.",
-            "News from the same day now appears in the order it was published, newest on top."
+            "News from the same day appears in the order it was published, newest on top."
           ]
         },
         {
-          "h": "Getting it",
-          "text": "mwcode checks for a new version shortly after it starts and every few hours. When one is out you will see Update available at the top. Press it, or go to Settings, then About, then Update. Your sessions, settings and keys stay as they are. New downloads from the website are already 1.0.1."
+          "h": "One thing to know",
+          "text": "Updating from 1.0.0 or 1.0.1 is carried out by the version you have now, so you may see the installer window once more. From 1.0.2 on, updates are silent."
         }
       ],
       "minVersion": "1.0.0",
-      "maxVersion": "1.0.0"
+      "maxVersion": "1.0.1"
     },
     {
       "id": "b-mindweave-3-0-0",
