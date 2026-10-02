@@ -1,38 +1,11 @@
 {
   "v": 1,
-  "seq": 7,
-  "issued": "2026-10-02T15:16:07.915Z",
+  "seq": 8,
+  "issued": "2026-10-02T15:19:06.083Z",
   "items": [
     {
-      "id": "a-mindweave-3-0-1",
-      "kind": "update",
-      "area": "cli",
-      "version": "3.0.1",
-      "command": "npm install -g mindweave@latest",
-      "date": "2026-10-02",
-      "title": "Mindweave 3.0.1 is out",
-      "summary": "A small update to 3.0: the terminal now shows its name as Mindweave 2, in the header, on the first-run screen and in --help. The version is still 3.0.",
-      "points": [
-        "Nothing else changed. If 3.0.0 works for you, there is no hurry.",
-        "For npm installs only. The app has its own copy, which updates with the app."
-      ],
-      "sections": [
-        {
-          "h": "Updating",
-          "text": "Run the command below, or type /update inside Mindweave and it updates and reopens on the conversation you were in."
-        }
-      ],
-      "link": {
-        "label": "Release on GitHub",
-        "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.0.1"
-      },
-      "images": []
-    },
-    {
       "id": "b-mindweave-3-0-0",
-      "kind": "update",
-      "area": "cli",
-      "command": "npm install -g mindweave@latest",
+      "kind": "news",
       "date": "2026-10-02",
       "title": "Mindweave 3.0.0 is out",
       "summary": "The biggest terminal release so far: a much faster screen, steps you can watch as they happen, goals that run on their own, usage limits, rewind, and local models through Ollama.",
@@ -81,7 +54,7 @@
         },
         {
           "h": "Updating",
-          "text": "Run the command below, or type /update inside Mindweave and it updates and reopens on the conversation you were in. Mindweave 3.0 needs Node 24 or newer, so update Node first if you are on 20 or 22."
+          "text": "The terminal version inside mwcode is already up to date, so there is nothing to do there. If you also installed it with npm, run npm install -g mindweave@latest, or type /update inside Mindweave. It needs Node 24 or newer."
         }
       ],
       "link": {
