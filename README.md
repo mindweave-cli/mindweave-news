@@ -6,6 +6,8 @@ shows only what checks out.
 
 ## Publishing
 
+**What's new is a history.** Every release gets its own plain news item (kind `news`) and stays there, oldest at the bottom, newest on top. Never delete an old item and never hide one with `minVersion`/`maxVersion`: removing an item removes it from everyone's app. Use `update` items only for something the app itself can install, and `expires` only for a notice that really goes stale.
+
 1. Edit `source.json` (the only file you write by hand). **The newest item goes first**: the
    latest one is always on top in the app. Items are shown by date, newest first, and items from
    the same day keep the order of this file. App 1.0.0 orders same-day items by id instead, so
