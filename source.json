@@ -1,6 +1,147 @@
 {
   "items": [
     {
+      "id": "welcome-guide",
+      "kind": "news",
+      "date": "2026-10-02",
+      "title": "Welcome to mwcode: how to get going",
+      "summary": "A short guide to your first session, the three modes, the safety nets, and a few habits that make the agent a lot more useful.",
+      "points": [
+        "Open a project folder, add a key or pick a local model, and ask for something small first.",
+        "Lightning just does it, Architect plans without touching anything, Sentinel asks before each change.",
+        "You can always go back: rewind to an earlier message, and keep your work in git.",
+        "Tell us what breaks with Send feedback in the sidebar. Every message is read."
+      ],
+      "sections": [
+        {
+          "h": "Your first session",
+          "list": [
+            "Open a project folder. mwcode works inside it: it reads your files, edits them and runs commands there.",
+            "Add a key in Settings, then Providers. Keys stay on your computer and only go to the provider you picked.",
+            "No key? Install Ollama and pick one of its models. It runs on your own machine and costs nothing.",
+            "Start small. Ask it to explain the project, or to fix one thing you already know about. You will learn how it works faster than by reading about it."
+          ]
+        },
+        {
+          "h": "Picking a model",
+          "text": "There is no single best one. Quick, cheap models are good for everyday edits and questions. Stronger models are worth it for hard bugs and bigger changes. Local models through Ollama keep everything on your machine, at the cost of speed and some quality. Switching is one click in the model menu under the message box, so try a few and keep what suits you."
+        },
+        {
+          "h": "The three modes",
+          "list": [
+            "Lightning: it goes ahead and does the work. Fastest, best when you trust the task.",
+            "Architect: it reads and plans but changes nothing. Good for understanding a codebase or agreeing on a plan first.",
+            "Sentinel: it asks before every change and every command. Good for unfamiliar projects or anything risky."
+          ]
+        },
+        {
+          "h": "Watching it work",
+          "text": "Every step shows up in the chat as it happens: what it read, what it changed, and the commands it runs, with their output while they run. You can keep typing while it works. Your message waits its turn, and you can pull it back to edit it."
+        },
+        {
+          "h": "Safety nets",
+          "list": [
+            "Rewind: take the conversation back to before one of your messages, files included, and go a different way.",
+            "Keep your project in git and commit before big changes. It is the simplest undo there is.",
+            "It makes mistakes, mostly depending on the model. Read what it changed before you rely on it."
+          ]
+        },
+        {
+          "h": "Bigger jobs",
+          "list": [
+            "Run starts your project's command and shows its output, so you and the agent can both see whether it works.",
+            "Marathon takes a goal and keeps going on its own until the goal is checked and done, it gets stuck, or it reaches its budget.",
+            "It can test an app by using it: opening it, clicking through and reading the screen, to tell an app that started from one that works."
+          ]
+        },
+        {
+          "h": "Small habits that help",
+          "list": [
+            "Be specific. Name the file, the error, or what you expect to see.",
+            "Drop in a screenshot when something looks wrong. A picture explains a layout bug faster than words.",
+            "Keep notes about your project in MINDWEAVE.md. It is read at the start of every session.",
+            "Start a new session for a new task, so old context does not get in the way."
+          ]
+        },
+        {
+          "h": "Spending",
+          "text": "Settings, then Tokens and usage limits, lets you cap what it uses per five hours, per week or per month, in tokens or in money. When a limit is reached it stops and tells you, instead of running on."
+        },
+        {
+          "h": "The terminal version",
+          "text": "mwcode includes Mindweave, the terminal version of the same agent. Type mw in a terminal to use it. The Windows installer and the Linux .deb set that up for you, and on macOS you add it from Settings, then About. Both share the same sessions, keys and settings, so you can start in one and carry on in the other."
+        },
+        {
+          "h": "Tell us what breaks",
+          "text": "mwcode is young and gets better mostly through reports from people using it. Send feedback in the sidebar sends a message straight to the developer, no account needed. Bugs, ideas and things that felt confusing are all welcome."
+        }
+      ],
+      "links": [
+        { "label": "Website", "url": "https://mindweavedev.netlify.app/" },
+        { "label": "GitHub", "url": "https://github.com/mindweave-cli/mwcode" },
+        { "label": "X", "url": "https://x.com/mindweavecli" }
+      ],
+      "minVersion": "1.0.0"
+    },
+    {
+      "id": "cli-3-0",
+      "kind": "update",
+      "area": "cli",
+      "command": "npm install -g mindweave@latest",
+      "date": "2026-10-02",
+      "title": "Mindweave 3.0 for the terminal",
+      "summary": "The biggest terminal release so far: a much faster screen, steps you can watch as they happen, goals that run on their own, usage limits, rewind, and local models through Ollama.",
+      "points": [
+        "Scrolling and startup are much faster, and long conversations can be scrolled all the way back.",
+        "Each step shows up while it works: a running command pulses with its output underneath.",
+        "/marathon, /rewind, usage limits and Ollama are all new.",
+        "It needs Node 24 or newer. The app brings its own, so this only matters for npm installs."
+      ],
+      "sections": [
+        {
+          "h": "A faster terminal",
+          "list": [
+            "Scrolling a long conversation takes about 70% less processor time, and it starts about 15% sooner than 2.5.1.",
+            "The mouse wheel speeds up the faster you turn it, and slow turns still move three lines.",
+            "The whole conversation can be scrolled now, not just the last part of it."
+          ]
+        },
+        {
+          "h": "Watching it work",
+          "list": [
+            "A row appears when a tool starts, with a pulsing dot, and settles when it finishes.",
+            "A command starts when its row appears, so you see it running with its output, not just the result.",
+            "Several reads fold into one row, and each step gets a moment on screen before the next one.",
+            "Starting an app or a server now reports how it went once, within a few seconds."
+          ]
+        },
+        {
+          "h": "New things to try",
+          "list": [
+            "/marathon: hand over a goal and it keeps going until the goal is checked and done, it gets stuck, or it runs out of budget.",
+            "/rewind: go back to before one of your messages, files included, and edit it.",
+            "Usage limits per five hours, week or month, in tokens or money, and a view of what you have spent.",
+            "Testing an app by using it: it can open your app, click through it and read the screen.",
+            "Ollama: local models on your own machine, no key needed.",
+            "/app: get the desktop app, which shares sessions and settings with the terminal."
+          ]
+        },
+        {
+          "h": "Looks and fixes",
+          "list": [
+            "The colours now match the desktop app, and your own messages sit on a grey band.",
+            "Your message lines up with the agent's, and the gap under the header is gone.",
+            "New models, a check of the whole agent loop that fixed four faults, and better handling of long sessions."
+          ]
+        },
+        {
+          "h": "Updating",
+          "text": "Run the command below, or type /update inside Mindweave and it updates and reopens on the conversation you were in. Mindweave 3.0 needs Node 24 or newer, so update Node first if you are on 20 or 22."
+        }
+      ],
+      "link": { "label": "Full release on GitHub", "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.0.0" }
+    },
+    {
       "id": "welcome-news",
       "kind": "news",
       "date": "2026-09-29",
