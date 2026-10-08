@@ -1,6 +1,76 @@
 {
   "items": [
     {
+      "id": "0-0-mindweave-3-1-0-mwcode-1-0-5",
+      "kind": "news",
+      "date": "2026-10-08",
+      "title": "Mindweave 3.1.0 and mwcode 1.0.5: safer by default, fewer questions, your own hooks",
+      "summary": "Opening a project can no longer start programs or reach your secrets, harmless commands stop asking for permission, and you can set your own rules and hooks. The app adds screens for them, smoother scrolling and Ollama as a normal provider.",
+      "points": [
+        "Opening a project no longer starts the servers it names. You are shown the command and asked.",
+        "Sentinel stops asking about commands that only read, and you can answer never ask again for one like npm test.",
+        "Your own command rules and hooks, kept where a cloned project cannot reach them.",
+        "Smoother scrolling, Ollama as a normal provider, and long sessions cost less."
+      ],
+      "sections": [
+        {
+          "h": "Safer by default",
+          "list": [
+            "Servers named in a project's own config wait for your answer before they start, and a project cannot swap one of yours.",
+            "Helpers such as language servers say where they come from and ask before they are installed.",
+            "Files that run code later, such as a commit hook or a CI workflow, ask before the agent writes them.",
+            "Protected files are judged by the file itself, so a link or a different spelling of the path does not get around them. Copying or sending one with a shell command is refused.",
+            "The agent cannot save its own rules or lift a protection without showing you the text and asking.",
+            "Text you cannot see, hidden in a note, a file or a web page, is removed before the model reads it."
+          ]
+        },
+        {
+          "h": "Fewer questions that do not matter",
+          "list": [
+            "Commands that only read, such as ls, cat and git status, no longer ask in Sentinel.",
+            "Answer never ask again for a command like npm test and it is remembered for the project. You can take it back in Settings, Permissions.",
+            "Write your own rules: allow, always ask, or forbid a command, with a reason the agent is told."
+          ]
+        },
+        {
+          "h": "Hooks",
+          "text": "Run your own commands before or after a tool, when you send a message, when the agent finishes and when a chat starts. A hook can stop an action and tell the agent why. They live in your own settings folder, never in a project, so a cloned repository cannot add one."
+        },
+        {
+          "h": "In the app",
+          "list": [
+            "Settings, Permissions now has Command rules and shows your hooks.",
+            "Settings, Tokens shows how much of your spend was background work you did not ask for, and what the current chat has done.",
+            "Marathon shows what a goal has cost against its ceiling.",
+            "Scrolling follows the system, and the app's own glides take the same time on every screen.",
+            "Ollama is a normal provider with its own page, and can run on another computer."
+          ]
+        },
+        {
+          "h": "Lower cost, fewer hangs",
+          "list": [
+            "Session notes are no longer sent on every call when nothing has been cleared yet.",
+            "The task list survives a resume, a stalled stream is retried, and a reply cut off by the output limit carries on by itself.",
+            "A fast command could hang for two minutes on Linux. That is fixed."
+          ]
+        },
+        {
+          "h": "Good to know",
+          "text": "The app updates itself: press Update when it appears. For the terminal, run npm install -g mindweave@latest, or let the app do it from Settings, About. Both were tested on Windows and Linux. Neither has been run on a real Mac yet."
+        }
+      ],
+      "links": [
+        {
+          "label": "Mindweave 3.1.0",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.1.0"
+        },
+        {
+          "label": "mwcode 1.0.5",
+          "url": "https://github.com/mindweave-cli/mwcode/releases/tag/v1.0.5"
+        }
+      ]
+    },
+    {
       "id": "0-0-mwcode-1-0-2",
       "kind": "news",
       "date": "2026-10-02",
