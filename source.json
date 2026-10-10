@@ -1,6 +1,56 @@
 {
   "items": [
     {
+      "id": "0-0-0-0-mindweave-3-2-1",
+      "kind": "news",
+      "date": "2026-10-10",
+      "title": "Mindweave 3.2.1: quick fixes, more help, and Claude Haiku 5.5",
+      "summary": "A round of quick fixes for the terminal, more help built in, and Claude Haiku 5.5 added to the model list. The agent's session notes are now used only when a conversation is cut down, so they can no longer disagree with the conversation it is in. The mwcode app gets this with its next release.",
+      "points": [
+        "Claude Haiku 5.5 is in /model: the fastest and cheapest, for quick, simple work.",
+        "/help now explains the folded lines like Ran 3 commands, and how to open them.",
+        "The agent's session notes can no longer contradict what it just did.",
+        "A long command and its note no longer run into each other."
+      ],
+      "sections": [
+        {
+          "h": "Quick fixes",
+          "list": [
+            "The agent's notes about a session used to be shown to it on every turn. If they fell behind, a small model could end up arguing with its own memory. They are now used only when a conversation is cut down, and they are kept up to date while the work is going on.",
+            "A long command no longer runs into the note beside it. The note goes on its own line when it does not fit.",
+            "Lines that repeated what a row already showed, such as a note that a command was killed, are gone. A command that died on its own with an error, or went quiet, is still reported.",
+            "Pointing at a long output now changes only its click to show line. The rest stays still."
+          ]
+        },
+        {
+          "h": "More help",
+          "list": [
+            "/help explains what a line like Ran 3 commands, read 2 files means, and how to open it with a click or Ctrl+O.",
+            "It also says how to scroll back and how to get back to the end.",
+            "The tip line mentions that a line ending in an arrow opens when you click it."
+          ]
+        },
+        {
+          "h": "Claude Haiku 5.5",
+          "list": [
+            "Pick it in /model. Haiku 4.5 is still there.",
+            "Thinking can be turned off on it, but only at effort high or below.",
+            "A prompt over 100,000 tokens costs five times the rate on this model, so Mindweave compacts the conversation at 100,000 tokens on it instead of letting a long session cross that line."
+          ]
+        },
+        {
+          "h": "In the mwcode app",
+          "text": "The terminal inside the app gets all of this when the app itself is next updated."
+        }
+      ],
+      "links": [
+        {
+          "label": "Mindweave 3.2.1",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.1"
+        }
+      ]
+    },
+    {
       "id": "0-0-0-mindweave-3-2-0",
       "kind": "news",
       "date": "2026-10-10",
