@@ -1,6 +1,77 @@
 {
   "items": [
     {
+      "id": "0-0-0-mindweave-3-2-0",
+      "kind": "news",
+      "date": "2026-10-10",
+      "title": "Mindweave 3.2.0: what the agent runs and reads folds into one line",
+      "summary": "Everything the agent runs or reads between two things you can see now takes one line, like Ran 3 commands, read 3 files. Click it to see each command and which lines of each file were read. Long output, writes and edits open in place with a click, and scrolling is steadier.",
+      "points": [
+        "Commands and reads share one folded line, with a mark for how each command ended.",
+        "Click to open the list, click a command to see what it printed.",
+        "Reads say which part of the file they took, such as lines 410 to 551.",
+        "Long output, whole-file writes and edits open on a click and fold on the next."
+      ],
+      "sections": [
+        {
+          "h": "One line for the agent's working",
+          "text": "Commands and file reads used to stack up as a row each. Now they fold into one line that says how many commands ran and how many files were read. A red mark shows a failed command without opening anything, and the dot pulses while something is still working."
+        },
+        {
+          "h": "Open only what you want",
+          "list": [
+            "Click the line to list every command and every file read.",
+            "Click a command to see what it printed. Click again to fold it.",
+            "A read shows the file and the part it took: the lines, the whole file, or that it was read before.",
+            "Hovering lights up what you are over. Nothing is underlined."
+          ]
+        },
+        {
+          "h": "Long output stays reachable",
+          "list": [
+            "A long command output, a whole-file write or an edit shows the start and a line to open the rest.",
+            "Your chats keep the full text of writes and edits, even after old context is cleared, and old chats open the same way.",
+            "A long line wraps instead of being cut when a row is open."
+          ]
+        },
+        {
+          "h": "Steadier scrolling",
+          "list": [
+            "Each wheel step moves the same few lines, with no animation, so you keep your place.",
+            "The scrolled-back chip shows how far through the chat you are."
+          ]
+        }
+      ],
+      "images": [
+        {
+          "file": "images/1-working.png",
+          "alt": "One line saying Running 2 commands, read 3 files, with a timer",
+          "caption": "While it works: one line, a pulsing dot and a timer."
+        },
+        {
+          "file": "images/2-folded.png",
+          "alt": "One line saying Ran 3 commands, read 3 files, with two green marks and one red",
+          "caption": "Done: one line, and a red mark shows a command failed."
+        },
+        {
+          "file": "images/3-opened.png",
+          "alt": "The opened list with each command and the lines read from each file",
+          "caption": "Click it: every command, and which lines of each file were read."
+        },
+        {
+          "file": "images/4-failed-command.png",
+          "alt": "A failed command opened to show its error output",
+          "caption": "Click a command to see what it printed."
+        }
+      ],
+      "links": [
+        {
+          "label": "Mindweave 3.2.0",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.0"
+        }
+      ]
+    },
+    {
       "id": "0-0-mindweave-3-1-0-mwcode-1-0-5",
       "kind": "news",
       "date": "2026-10-08",
