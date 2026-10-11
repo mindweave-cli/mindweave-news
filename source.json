@@ -54,6 +54,16 @@
           "h": "In the mwcode app",
           "text": "The terminal inside the app gets all of this when the app itself is next updated."
         }
+      ],
+      "links": [
+        {
+          "label": "Mindweave 3.2.5",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.5"
+        },
+        {
+          "label": "Mindweave 3.2.4",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.4"
+        }
       ]
     },
     {

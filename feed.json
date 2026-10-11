@@ -1,7 +1,7 @@
 {
   "v": 1,
-  "seq": 17,
-  "issued": "2026-10-11T19:30:27.477Z",
+  "seq": 18,
+  "issued": "2026-10-11T19:35:11.215Z",
   "items": [
     {
       "id": "0-0-0-0-0-0-0-mindweave-3-2-5",
@@ -56,6 +56,16 @@
         {
           "h": "In the mwcode app",
           "text": "The terminal inside the app gets all of this when the app itself is next updated."
+        }
+      ],
+      "links": [
+        {
+          "label": "Mindweave 3.2.5",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.5"
+        },
+        {
+          "label": "Mindweave 3.2.4",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.4"
         }
       ],
       "images": []
