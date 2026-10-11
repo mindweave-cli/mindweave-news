@@ -1,6 +1,84 @@
 {
   "items": [
     {
+      "id": "0-0-0-0-0-mindweave-3-2-2",
+      "kind": "news",
+      "date": "2026-10-11",
+      "title": "Mindweave 3.2.2: a UI test is one line, and what you open sits on a band",
+      "summary": "When the agent tests an app, every look, click and typed word used to be a row of its own, each with a long list of the page. They now fold into one line like Tested 5 steps, with a mark for each step, and the dot pulses while it works. What you open sits on a shaded band, and a line that holds a single call opens in one click. The mwcode app gets this with its next release.",
+      "points": [
+        "The steps of a UI test fold into one line, with a mark for each step.",
+        "A step that failed says why on its own line, in red, without opening anything.",
+        "What you open sits on a shaded band, like a message you wrote.",
+        "A line holding only one command or one step opens in one click, not two."
+      ],
+      "sections": [
+        {
+          "h": "One line for a test",
+          "text": "Testing an app used to leave a row for every look, click and typed word, and each row carried its own list of every control on the page. A test of seven steps was a hundred lines. Now the steps fold into the same line as the commands and reads, like Tested 5 steps, with one mark per step. The dot pulses while the test runs, and the line says which step it is on, so a long test does not look stuck."
+        },
+        {
+          "h": "Open only what you want",
+          "list": [
+            "Click the line to list the steps, one line each. Click a step to see what it did and what the page looked like.",
+            "The page is shown by kind, such as button with the names beside it, instead of sixteen numbered lines. The numbers were for the agent, not for you.",
+            "A step that failed keeps its reason on the line, in red. Before, a failure printed the whole page every time.",
+            "If the line holds a single command or a single step, it opens straight onto it. With two or more, each opens on its own click."
+          ]
+        },
+        {
+          "h": "A clearer look when something is open",
+          "list": [
+            "The text you open sits on a shaded band, the same shade as a message you wrote, with no vertical line. The line you opened is bright and the others stay dim, so you can tell which one is open.",
+            "Long lines wrap inside the band, and every row of it is the full width."
+          ]
+        },
+        {
+          "h": "A fix",
+          "text": "A command that printed a carriage return, which PowerShell does, could break the band, because a terminal sends the cursor back to the left edge. Output is now cleaned before it is drawn."
+        },
+        {
+          "h": "Also",
+          "list": [
+            "/help now says that tests fold too.",
+            "Older chats open the same way, and a write or edit saved without its full text is put back together from the file when you reopen the chat."
+          ]
+        },
+        {
+          "h": "In the mwcode app",
+          "text": "The terminal inside the app gets all of this when the app itself is next updated. This was tested on Windows. It has not been run on a real Mac yet."
+        }
+      ],
+      "images": [
+        {
+          "file": "images/322-working.png",
+          "alt": "One line saying Testing 1 of 4 steps, with three green marks, the step it is on and a timer",
+          "caption": "While it works: one line, a pulsing dot, the step it is on and a timer."
+        },
+        {
+          "file": "images/322-folded.png",
+          "alt": "One line saying Tested 5 steps, with four green marks and one red",
+          "caption": "Done: one line, and a red mark shows a step failed."
+        },
+        {
+          "file": "images/322-opened.png",
+          "alt": "The opened list with one line per step and the reason the last step failed in red",
+          "caption": "Click it: one line per step, and why the failed one failed."
+        },
+        {
+          "file": "images/322-step-open.png",
+          "alt": "One step opened on a shaded band, showing what it did and the page grouped by kind",
+          "caption": "Click a step: what it did, and the page by kind, on a shaded band."
+        }
+      ],
+      "links": [
+        {
+          "label": "Mindweave 3.2.2",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.2"
+        }
+      ]
+    },
+    {
       "id": "0-0-0-0-mindweave-3-2-1",
       "kind": "news",
       "date": "2026-10-10",
