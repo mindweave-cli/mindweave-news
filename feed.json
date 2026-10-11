@@ -1,8 +1,65 @@
 {
   "v": 1,
-  "seq": 16,
-  "issued": "2026-10-11T17:24:50.285Z",
+  "seq": 17,
+  "issued": "2026-10-11T19:30:27.477Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-0-mindweave-3-2-5",
+      "kind": "news",
+      "date": "2026-10-11",
+      "title": "Mindweave 3.2.4 and 3.2.5: Lightning stops asking, and sub-agents become a rare tool",
+      "summary": "Lightning now runs commands without asking, and a sub-agent that runs out of steps still reports what it found. The agent does ordinary work and its own checks itself instead of starting sub-agents, and a verifier that answers in prose shows how many commands it ran. The mwcode app gets this with its next release.",
+      "points": [
+        "Lightning runs commands without asking. Sentinel is the mode that asks.",
+        "A sub-agent that runs out of steps is given one last turn to say what it found.",
+        "The agent runs its own tests and checks. A sub-agent is for a genuinely large job, or when you ask.",
+        "A verifier that answers in prose shows `ran 5 commands`, not `0 checks`."
+      ],
+      "sections": [
+        {
+          "h": "Lightning does not ask about commands (3.2.4)",
+          "list": [
+            "Force-pushing, a hard reset, git clean, deleting a branch, publishing a package and running code downloaded from the internet used to ask in every mode. Now they only ask in Sentinel, even after allow all commands.",
+            "Stopping a program by name asks in no mode. 3.2.3 said it asked first, and that was a mistake: the agent restarts the app it is testing after almost every build.",
+            "A rule you wrote yourself to ask about a command is still asked. That is your own word.",
+            "A few questions that are not about the work stay in every mode: a file that runs code later, a project's own tool servers, and writing outside the folders you opened.",
+            "A command that is refused whatever you answer, such as one already running in the background or one with a guaranteed parse error, is refused before any question."
+          ]
+        },
+        {
+          "h": "A sub-agent that runs out of steps still reports (3.2.4)",
+          "text": "Before, a sub-agent that reached its step limit returned only a pause note written for a person, and everything it had read and run was thrown away. In one session a verifier spent thirty steps on eight checks and returned nothing. Now it is given one last turn, with no tools, to say what it checked and what it did not get to. A verifier also gets 40 steps by default instead of 20, and the line on screen says Stopped at its step limit."
+        },
+        {
+          "h": "A clearer permission message (3.2.4)",
+          "list": [
+            "The block in the conversation holds the question and what it is about, and a dim allowed or declined line follows once you answer.",
+            "The working line stops counting while a question waits for you, and says Waiting for your answer."
+          ]
+        },
+        {
+          "h": "Sub-agents are a rare tool (3.2.5)",
+          "text": "In one session the agent started four verifier sub-agents for ordinary work, one only to re-check its own fixes. The cause was the built-in instructions, which told it to check any non-trivial work with a separate verifier and to run it again after fixing what it found. Now the agent does ordinary work itself: reading, searching, editing, running the tests and the build, and checking its own result. A sub-agent is for a job that is genuinely large, such as a sweep over a big codebase, or for when you ask. A verifier is for high-risk work, such as something about to be published, and it is used once. The tool's own description now lists what not to hand it."
+        },
+        {
+          "h": "The verifier line (3.2.5)",
+          "text": "A verifier that answered in plain prose showed Failed verification, 0 checks, even when it had run the project's checks and several probes, because only lines written in the dollar-command form were counted. It now says how many commands it ran. The verdict itself is unchanged."
+        },
+        {
+          "h": "What to know",
+          "list": [
+            "Lightning runs what the agent decides to run. What goes wrong is yours to answer for, so use Sentinel when you want to be asked.",
+            "Fewer sub-agents means fewer tokens spent, and the agent's own checks show up in the conversation as ordinary commands.",
+            "This was tested on Windows and has not been run on a real Mac yet."
+          ]
+        },
+        {
+          "h": "In the mwcode app",
+          "text": "The terminal inside the app gets all of this when the app itself is next updated."
+        }
+      ],
+      "images": []
+    },
     {
       "id": "0-0-0-0-0-0-mindweave-3-2-3",
       "kind": "news",
