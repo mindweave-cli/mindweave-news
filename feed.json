@@ -1,8 +1,106 @@
 {
   "v": 1,
-  "seq": 15,
-  "issued": "2026-10-11T15:18:48.451Z",
+  "seq": 16,
+  "issued": "2026-10-11T17:24:50.285Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-mindweave-3-2-3",
+      "kind": "news",
+      "date": "2026-10-11",
+      "title": "Mindweave 3.2.3: sub-agents read at a glance, and a check has to be a real check",
+      "summary": "A sub-agent is now a short title and how it ended, with its calls a click away. A verifier can run the tests it is asked to run, and its verdict is checked against what it really did. The model keeps the edits it just wrote, a screenshot no longer photographs the terminal, and the app driver says when a port is not yours. The mwcode app gets this with its next release.",
+      "points": [
+        "A sub-agent is a title and an answer: a tick when it worked, a cross when it failed, a bang when it only half worked.",
+        "A verifier can run builds, tests and the app, and a check only counts if its command really ran.",
+        "The model keeps its own recent edits instead of having them cleared from its memory.",
+        "A screenshot with no window named never takes a picture of the terminal."
+      ],
+      "sections": [
+        {
+          "h": "Sub-agents, at a glance",
+          "text": "A sub-agent used to show as its whole task pasted onto one line, cut off in the middle of a word, then every call it made, then a summary written for the agent and not for you. Now it is a short title taken from the task, and how it ended: a tick, a cross, or a bang when it could only do part of it, with the number of steps and how long it took. While it works the dot pulses and the line says what it is doing."
+        },
+        {
+          "h": "Open only what you want",
+          "list": [
+            "Click it to see a shaded band with the task, the result, a count of what it did, and each call.",
+            "A call that came back again and again, such as checking on a background program, is one line with a count.",
+            "A call it was refused is red.",
+            "Several at once are one group, each with its own two lines, so you can see who is doing what and how far along."
+          ]
+        },
+        {
+          "h": "Why a verifier was not worth much before",
+          "text": "A verifier is a second agent that checks work the first one did. It was told to run the tests, but it was made read-only like any research worker, which took away the ability to run anything. So it read the code, wrote down what it would have tested, and put PASS next to it. In one real session its report said it had made eight checks, and one of its PASS lines was wrong. Nothing in Mindweave could tell the difference between a check it ran and one it only described."
+        },
+        {
+          "h": "What changed for verification",
+          "list": [
+            "A verifier can now run builds, tests, the typechecker, scripts that call the code, and the app. It still cannot edit or write files.",
+            "It is refused, with the reason, anything that deletes, moves or copies files, changes a git repository, installs or publishes packages, stops processes, or writes anywhere but the temporary folder.",
+            "Each check in its report is compared with the commands it really ran. A check whose command never ran does not count, and the PASS under it says so.",
+            "If a project file changed while it ran, a pass becomes a partial, the file is named, and undo can put it back.",
+            "Whatever it started in the background is stopped when it finishes."
+          ]
+        },
+        {
+          "h": "Also in this release",
+          "list": [
+            "The model keeps what it wrote. When an old tool result was cleared to save space, the edit that produced it was cleared too, and the model was left remembering only its last two or three edits. It now keeps up to forty of its recent edits, or about 24,000 tokens of them, newest first.",
+            "The app driver tells the model when a debugging port belongs to a program it did not start, with the page title, so it does not mistake another application for the one it is testing.",
+            "A screenshot taken without naming a window used to photograph whichever window had focus, which was almost always the terminal Mindweave runs in. It now says so and lists the other windows.",
+            "Stopping every program with a given name, such as every Electron app, now asks first."
+          ]
+        },
+        {
+          "h": "How this makes it better, and what to know",
+          "list": [
+            "Fewer false \"verified\" results, because a check has to be a command that ran.",
+            "Fewer mistakes from the model contradicting code it wrote a few minutes earlier.",
+            "Fewer wrong-app and wrong-window mistakes when testing an app.",
+            "It costs something: a verifier takes longer and uses more, and keeping edits adds up to about 24,000 tokens to a request, most of it cheap cached input.",
+            "A script that deletes a file by itself cannot be seen from the command line. It is caught afterwards by looking at the project files, which cannot put back a file over 256 KB or one outside the project.",
+            "This was tested on Windows and has not been run on a real Mac yet. The checks are proven in tests; how much a real model improves over a long session has not been measured yet."
+          ]
+        },
+        {
+          "h": "In the mwcode app",
+          "text": "The terminal inside the app gets all of this when the app itself is next updated."
+        }
+      ],
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/mindweave-cli/mindweave-news/main/images/323-1-working.png",
+          "sha256": "2655d5016493a889c76c4d6bb13f0a4822041035692147a27905d4f3181bc7d2",
+          "alt": "A sub-agent line with a short title, the step it is on, and a timer",
+          "caption": "While it works: a title, the step it is on, and a timer."
+        },
+        {
+          "src": "https://raw.githubusercontent.com/mindweave-cli/mindweave-news/main/images/323-2-done.png",
+          "sha256": "fcae85236f5c7d30f82ad43d234e7d013e71b5f9e93be5f62702c9ec1af95ee1",
+          "alt": "A finished sub-agent with an amber bang, Could not fully verify, 8 checks, 20 steps, 2 minutes 10 seconds",
+          "caption": "Done: how it ended comes first, then steps and time."
+        },
+        {
+          "src": "https://raw.githubusercontent.com/mindweave-cli/mindweave-news/main/images/323-3-opened.png",
+          "sha256": "e0dd2b775428cf8cda1c86081b5370988ff1f7002a79b284e01c2c1368407a1a",
+          "alt": "The opened sub-agent showing the task, the result, a count of what it did and each call",
+          "caption": "Click it: the task, the result, what it did, and each call, with repeats merged."
+        },
+        {
+          "src": "https://raw.githubusercontent.com/mindweave-cli/mindweave-news/main/images/323-4-group.png",
+          "sha256": "f3f80394abd7300e4bbf942d53b359536e851fea903599c657f3b4d7e9e55649",
+          "alt": "Three sub-agents in one group, one done in green, one failed in red, one still running",
+          "caption": "Several at once: one group, each with its own verdict."
+        }
+      ],
+      "links": [
+        {
+          "label": "Mindweave 3.2.3",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.3"
+        }
+      ]
+    },
     {
       "id": "0-0-0-0-0-mindweave-3-2-2",
       "kind": "news",
