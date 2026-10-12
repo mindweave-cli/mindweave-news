@@ -1,6 +1,88 @@
 {
   "items": [
     {
+      "id": "0-0-0-0-0-0-0-0-0-mindweave-3-2-7",
+      "kind": "news",
+      "date": "2026-10-12",
+      "title": "Mindweave 3.2.7: edits show only what changed, and macOS and Linux are supported",
+      "summary": "An edit used to fill a screen with the old text in red and the new text in green. Now only the lines that changed are marked, with line numbers and the changed words highlighted. The test suite, the typecheck and the build now run on macOS and Linux on every change, and several things that quietly did not work on a Mac are fixed. The mwcode app gets this with its next release.",
+      "points": [
+        "An edit shows only the lines that changed, with line numbers and two lines of context.",
+        "Changed words inside a rewritten line are marked, each change on its own.",
+        "The test suite runs on macOS (Apple silicon) and Linux on every change, next to Windows.",
+        "Running processes read as stopped on a Mac, copying on Linux, and the Option and Alt word keys are fixed."
+      ],
+      "sections": [
+        {
+          "h": "Edits show what changed",
+          "text": "An edit used to be drawn as the old text in red and then the new text in green, so a paragraph that only gained two lines was shown twice and took a screen. Now the file before and after is compared. Only the lines that changed are marked, the lines around them are dim context, and each line has its number. A gap between two groups of changes is one dim row. The words that differ between a removed line and the line that replaced it are marked a step brighter, each change on its own."
+        },
+        {
+          "h": "Still big enough to follow",
+          "list": [
+            "The preview shows up to thirty rows, and a click shows the rest.",
+            "An opened block wraps a long line under itself with the number column kept.",
+            "The header now counts what really changed. It said minus 26 plus 58 for a two-line addition, because it counted the text of each replacement.",
+            "Replacing a symbol and rewriting a file show the same comparison. A new file shows numbered additions.",
+            "A terminal with 256 colours, such as Apple's Terminal.app, gets tints chosen for it, and a 16-colour terminal relies on the sign and the text colour."
+          ]
+        },
+        {
+          "h": "Three rows that behaved oddly",
+          "list": [
+            "A row of one command folds when you click the opened box. Only its header was clickable.",
+            "A command ended from outside, such as the agent restarting the app it is testing, no longer prints a red exit minus 1 line as if it had crashed.",
+            "An edit that failed quietly no longer splits the reads around it into two rows."
+          ]
+        },
+        {
+          "h": "macOS and Linux",
+          "list": [
+            "The suite, the typecheck and the build run on macOS (Apple silicon) and Linux on every change, and a failure on either fails the build. The packed package is also installed into a clean folder and its commands are run.",
+            "On a Mac every running process was read as stopped, so a running language server looked shut down. That is fixed.",
+            "Pages in the browser the ui tool drives now open on a slow machine, and deleting a system folder is refused on a Mac and on more Linux folders.",
+            "Copying works on Linux desktops (X11 as well as Wayland) and in tmux, and leaves the clipboard of an SSH machine alone.",
+            "Option and Alt with the arrows move by a word, and Alt and D delete the word ahead. Only the Windows keys were bound before."
+          ]
+        },
+        {
+          "h": "What to know",
+          "list": [
+            "Driving another program's window by its title, and window screenshots, are still Windows only. Driving a web page or a dev server works everywhere.",
+            "How it looks in Terminal.app, iTerm2, GNOME Terminal and Konsole has not been checked by eye, and it has not been run on an Intel Mac.",
+            "A change too large to compare cheaply still shows the old text and the new text, and a session saved by an older version draws its diffs the way they were saved."
+          ]
+        },
+        {
+          "h": "In the mwcode app",
+          "text": "The terminal inside the app gets all of this when the app itself is next updated."
+        }
+      ],
+      "images": [
+        {
+          "file": "images/327-a.png",
+          "alt": "An edit showing only the changed lines with line numbers, context and highlighted words",
+          "caption": "An edit: line numbers, two lines of context, only the changed lines tinted, and the changed words marked."
+        },
+        {
+          "file": "images/327-c.png",
+          "alt": "An edit with three changes in two places, separated by a gap row",
+          "caption": "Several changes: each group with its context, and a dim gap between them. The header counts the real changes."
+        },
+        {
+          "file": "images/327-b.png",
+          "alt": "The same edit opened in a narrower terminal with a long line wrapped under itself",
+          "caption": "Opened in a narrower terminal: a long line carries on underneath, with the number column kept."
+        }
+      ],
+      "links": [
+        {
+          "label": "Mindweave 3.2.7",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.7"
+        }
+      ]
+    },
+    {
       "id": "0-0-0-0-0-0-0-0-mindweave-3-2-6",
       "kind": "news",
       "date": "2026-10-12",
