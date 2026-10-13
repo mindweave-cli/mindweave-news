@@ -1,8 +1,102 @@
 {
   "v": 1,
-  "seq": 20,
-  "issued": "2026-10-12T04:14:46.078Z",
+  "seq": 21,
+  "issued": "2026-10-13T02:02:15.483Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-0-0-0-0-mindweave-3-2-8",
+      "kind": "news",
+      "date": "2026-10-13",
+      "title": "Mindweave 3.2.8: MCP servers that stay connected, Ctrl+X to background a command, and selecting while you scroll",
+      "summary": "An agent that added an MCP server could be told it was not connected while it was running fine. That is fixed, and MCP calls now fold into one row with the commands and reads. Ctrl+X moves a running command to the background, a text selection keeps growing while you scroll, and a few frames that flashed the wrong picture are gone. The mwcode app gets this with its next release.",
+      "points": [
+        "A tool call finds its MCP server when it runs, so restarting a server no longer breaks the calls after it.",
+        "The agent can check a server and restart it without asking, and a slow tool is allowed ten minutes.",
+        "MCP calls fold into the work row, one line each, with the server's own reason when one fails.",
+        "Ctrl+X moves the command the agent is waiting on to the background.",
+        "Drag to select and keep scrolling: the selection keeps growing and copies all of it."
+      ],
+      "sections": [
+        {
+          "h": "MCP servers that stay connected",
+          "text": "The tools a turn offered were tied to the connection that existed when the turn began. Enabling, disabling or adding a server replaces that connection, so every call after it failed with not connected for the rest of the turn, and the agent's own attempts to restart the server made it certain. A call now looks up the live connection, brings a server that died back up, and a server added during the turn can be called in that turn."
+        },
+        {
+          "h": "The agent can look, and restart",
+          "list": [
+            "Two new actions, status and reconnect, need no question. Enabling a server that is already running changes nothing, and enable says whether it connected and why not.",
+            "A tool call has ten minutes instead of the thirty seconds meant for the protocol's own bookkeeping, so a tool doing real work can finish.",
+            "Esc stops a tool call that is waiting on a server, and the server is told to cancel it.",
+            "The repeated failure stop notices an agent alternating between restarting a server and calling it."
+          ]
+        },
+        {
+          "h": "How MCP calls look",
+          "list": [
+            "They fold into the work row with commands and reads, such as Called 3 MCP tools, managed 1 MCP server, with a mark for each.",
+            "Every line has the same shape: a mark, the name, and what happened. A call that worked shows how long it took. One that failed shows the server's own reason.",
+            "Click a call to see what it asked and what came back. A change you declined shows as declined.",
+            "A server's prompts no longer fill the command menu. Type after the slash to find them."
+          ]
+        },
+        {
+          "h": "Ctrl+X: a command to the background, yourself",
+          "text": "After a couple of seconds the command's own line offers Ctrl+X. Press it and the command keeps running as a background shell and the agent carries on. It is told you moved it, and told when the command ends. It works on a command that would not be moved on its own, and every command running at that moment moves."
+        },
+        {
+          "h": "Selecting while you scroll",
+          "list": [
+            "A selection that starts in the conversation keeps growing while you turn the wheel, or while you hold the pointer past the top or bottom edge.",
+            "Letting go copies everything it covered, including what scrolled out of sight, and Ctrl+C copies it again.",
+            "If a flick scrolls so fast that a row was never drawn, it tells you that part was not copied."
+          ]
+        },
+        {
+          "h": "Opening a row",
+          "list": [
+            "Opening the newest row moves the view just far enough to show what opened, and folding it puts the view back.",
+            "Opening a row, or typing a slash for the menu, used to flash the wrong picture for a frame. With the view at the bottom the conversation is now lined up with the bottom by the layout itself."
+          ]
+        },
+        {
+          "h": "What to know",
+          "list": [
+            "The model picker still draws an empty box for about one frame before its items appear.",
+            "The selection only follows the conversation in the fullscreen shell. The inline shell leaves selecting to the terminal."
+          ]
+        },
+        {
+          "h": "In the mwcode app",
+          "text": "The terminal inside the app gets all of this when the app itself is next updated."
+        }
+      ],
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/mindweave-cli/mindweave-news/main/images/328-a.png",
+          "sha256": "6a75041d610ccf839202e9ac9a2b73c11b0512c7e8c92ea6743547cbd5e0bed1",
+          "alt": "A work row opened: three MCP tool calls and one server change, each on one line with a mark",
+          "caption": "MCP calls and server changes in one row: a mark, the name and what happened, with the time or the server's reason."
+        },
+        {
+          "src": "https://raw.githubusercontent.com/mindweave-cli/mindweave-news/main/images/328-b.png",
+          "sha256": "a145db3882b7e613f93b47e3cfb680de2028538026c641b9d1c60090437e1cab",
+          "alt": "One failed MCP call opened, showing what it asked and the server's error",
+          "caption": "A failed call opened: what it asked, and the answer laid out."
+        },
+        {
+          "src": "https://raw.githubusercontent.com/mindweave-cli/mindweave-news/main/images/328-c.png",
+          "sha256": "28c6ec1e1b1795dc97352a98ad00adfe167dec9080ab0422a92ac1883d21f553",
+          "alt": "A running command whose line offers Ctrl+X to run it in the background",
+          "caption": "The offer on the command's own line once it has run for a couple of seconds."
+        }
+      ],
+      "links": [
+        {
+          "label": "Mindweave 3.2.8",
+          "url": "https://github.com/mindweave-cli/mindweave/releases/tag/v3.2.8"
+        }
+      ]
+    },
     {
       "id": "0-0-0-0-0-0-0-0-0-mindweave-3-2-7",
       "kind": "news",
