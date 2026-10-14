@@ -1,8 +1,55 @@
 {
   "v": 1,
-  "seq": 21,
-  "issued": "2026-10-13T02:02:15.483Z",
+  "seq": 22,
+  "issued": "2026-10-14T15:45:36.166Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-0-0-0-0-0-mindweave-3-3-0",
+      "kind": "news",
+      "date": "2026-10-14",
+      "title": "Mindweave 3.3.0: run your own commands with !, search in the pickers, and a cleaner selection",
+      "summary": "Type ! at the start of the prompt and the rest runs in the project's shell, as you. The agent is woken by the result and carries on from it, as if it had run the command itself. The model, provider and key lists can be searched by typing, two clicks select a word and three a line, and a few screens that drew the wrong thing for a moment are fixed. The mwcode app gets this with its next release.",
+      "points": [
+        "! gh auth login, ! npm start, anything: it runs now, with no question, and the row reads You ran 1 command.",
+        "The agent is woken when your command ends and carries on from what it printed. It can ask you to run something and go on from the result.",
+        "Apps and servers start in the background and give the prompt back. The agent notices, and is told quietly if you stop one.",
+        "Search the model, provider and key lists by typing in the chat box.",
+        "Two clicks select a word, three select the line, and the dot and the > in the margin are never highlighted or copied."
+      ],
+      "sections": [
+        {
+          "h": "Running your own commands",
+          "text": "Typing ! at the start of the prompt runs what follows in the same shell the agent uses, straight away and without asking. The row reads You ran 1 command and opens like one of the agent's, with the command, its output and how it ended, and the box turns amber while the line starts with !. When the command ends the agent is woken, reads the result and carries on exactly as if it had run the command itself, so it can ask you to sign in or answer a prompt and go on from what comes back. What the command printed is marked as data, never as instructions."
+        },
+        {
+          "h": "Apps and long commands",
+          "list": [
+            "npm start, vite, electron . and the like start in the background and give the prompt back at once. The agent says it sees the app running.",
+            "If you stop the app, the agent gets a quiet note, so it does not assume it is still up and does not start it again.",
+            "Ctrl+X moves a slower command to the background, and the agent is woken when it finishes.",
+            "Esc stops your command and only that. It leaves an app you started alone."
+          ]
+        },
+        {
+          "h": "Search and selection",
+          "list": [
+            "The model, provider and /key provider lists can be searched by typing in the chat box. Esc clears the search first, then closes the list.",
+            "Two clicks select a word and three select the line, instantly. The wheel moves five lines a notch.",
+            "The dot, the > and the strip beside them are never highlighted or copied, and a drag that starts in empty space selects nothing."
+          ]
+        },
+        {
+          "h": "Fixes",
+          "list": [
+            "The model list no longer draws an empty box for a moment while it loads.",
+            "The footer no longer flashes when you have scrolled back and it grows.",
+            "Ctrl+C no longer leaves the fullscreen frame in the terminal.",
+            "The WebSearch row shows one line and the first five sources, and rows show full paths."
+          ]
+        }
+      ],
+      "images": []
+    },
     {
       "id": "0-0-0-0-0-0-0-0-0-0-mindweave-3-2-8",
       "kind": "news",
