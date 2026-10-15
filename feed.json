@@ -1,8 +1,54 @@
 {
   "v": 1,
-  "seq": 22,
-  "issued": "2026-10-14T15:45:36.166Z",
+  "seq": 23,
+  "issued": "2026-10-15T06:37:52.619Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-0",
+      "kind": "news",
+      "date": "2026-10-15",
+      "title": "Mindweave 3.4.0: send a message now with ctrl+F, a cheaper prompt cache, and a calmer screen",
+      "summary": "A message you type while the agent works can be sent at once with ctrl+F, and nothing is stopped. Sessions re-send less of their history at full price, and the screen redraws about a third as often while the agent works. Tab-indented code is drawn properly in a diff. The mwcode app gets this with its next release.",
+      "points": [
+        "ctrl+F sends what is in the box now: a command the agent is waiting on moves to the background and keeps running, and your message arrives at once.",
+        "The queue is one line above the working line, and clicking it takes the messages back into the box.",
+        "A cheaper prompt cache: steadier requests, the conversation's id sent to OpenRouter, xAI, OpenAI and Mistral, and tools found by reference on Anthropic.",
+        "A long break or a new model compacts a big conversation for free, and the chat says why.",
+        "About a third as many screen redraws while the agent works, and diffs of tab-indented code no longer have holes."
+      ],
+      "sections": [
+        {
+          "h": "Sending a message now",
+          "list": [
+            "ctrl+F sends what is in the box now. A message typed while the agent works still waits in the queue and reaches the agent when its step ends; ctrl+F makes that moment come sooner. A command the agent is waiting on moves to the background, as with ctrl+X, and keeps running. The step ends, your message arrives, and the agent is told the command is still going and hears when it ends. Nothing is stopped or thrown away.",
+            "The queue is one line above the working line: queued: hey, 2 more, ctrl+F to send now. Clicking the line, or pressing Up, takes the queue back into the box to edit.",
+            "A message queued before you pressed Esc is now answered. It used to be drawn in the chat and never answered; it goes out as its own turn."
+          ]
+        },
+        {
+          "h": "A cheaper prompt cache",
+          "text": "Providers read the start of a request from their cache at a fraction of the price, but only while it is identical to the one before. Anything that changed the start re-billed the whole conversation. The shell tools are now always listed instead of appearing when the first background command starts, related tools load together, and Anthropic loads found tools by reference so finding one changes nothing. Each provider is also told which conversation a request belongs to, so it can find the same cache again: a session id for OpenRouter, a conversation header for xAI, and a cache key for OpenAI and Mistral. It is a random id, never the project or the person."
+        },
+        {
+          "h": "Long breaks and new models",
+          "text": "When the provider no longer holds a copy of a big conversation (you were away for a while, or this is the first call to a model that has not run in the session), the whole history is going to be re-sent at full price anyway. So it is compacted first, from the notes the session already keeps, at no cost, and the chat says why. It waits at least 30 minutes before doing it again, and each provider's own cache time is used where it is known."
+        },
+        {
+          "h": "The screen and commands",
+          "list": [
+            "Code indented with tabs is drawn properly in a diff. A tab moves the cursor without painting, so the green and red rows had holes where the code was indented.",
+            "The working line was redrawn sixty times a second whether or not its text had changed. In a measured run the screen was drawn 5,192 times instead of 15,211 and the app was busy 8% of the time instead of 13%. The line looks and counts exactly as before.",
+            "What a command prints is marked as data, more servers and watchers start in the background (flask, uvicorn, rails, hugo, docker compose up and others), and /compact reads your ! commands as commands you ran.",
+            "The rewind confirmation no longer opens on Cancel."
+          ]
+        },
+        {
+          "h": "The app is getting a full redesign",
+          "text": "The desktop app, and its design, were not our best work. It did not look good, and it did not match what we had in mind for it. We are sorry about how often the interface and the design have changed. We are going to put real time into getting this right, so that the next design is the last one and we are not building a new one every month. A new and final design of the app is coming soon, with a better and clearer idea of what the app holds, where it is going, and what we plan to add to it later on. We will tell you when it is ready."
+        }
+      ],
+      "images": []
+    },
     {
       "id": "0-0-0-0-0-0-0-0-0-0-0-mindweave-3-3-0",
       "kind": "news",
