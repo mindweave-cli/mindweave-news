@@ -1,8 +1,57 @@
 {
   "v": 1,
-  "seq": 23,
-  "issued": "2026-10-15T06:37:52.619Z",
+  "seq": 24,
+  "issued": "2026-10-18T11:55:20.534Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-1",
+      "kind": "news",
+      "date": "2026-10-18",
+      "title": "Mindweave 3.4.1: a faster start, tools that fail less, and a cache that is not rewritten for nothing",
+      "summary": "Mindweave starts about a third faster, and the tools the agent uses fail less: broken arguments are refused with the reason, an edit batch no longer fails over one entry that changes nothing, and window titles with dashes or accents are found. A project note the agent writes no longer re-bills the whole conversation. The mwcode app gets this with its next release.",
+      "points": [
+        "The first screen comes about a third sooner: about half of the files read at launch are no longer read.",
+        "A MINDWEAVE.md the agent wrote is no longer read back at the start of every turn, which re-billed the whole conversation at full price.",
+        "Arguments that are not valid JSON are refused with the reason, and an edit batch survives an entry that changes nothing.",
+        "Window titles keep their accents and survive a dash or a curly quote, and a miss names the closest open window.",
+        "Searches are lines in the work row, edits that follow each other are one row, and /continue wipes the screen first."
+      ],
+      "sections": [
+        {
+          "h": "Starting up",
+          "text": "On a Windows PC the prompt used to appear after about 1.5 seconds and now appears after about 0.9. One small function was being taken from a library of several hundred files, and every one of them was opened and checked before the first screen. Mindweave now loads the one file that holds the function, and the libraries for unpacking language servers and talking to them are loaded when first used. About half of the files read at launch are no longer read."
+        },
+        {
+          "h": "A cache that is not rewritten for nothing",
+          "text": "A provider reads the start of a request from its cache at a fraction of the price, but only while it is identical to the one before. When the agent wrote a MINDWEAVE.md, Mindweave read it back at the start of the next turn, which changed the system prompt and re-billed the whole conversation at full price. The new text is now picked up at the next compaction, or when you save the notes yourself. A cache break caused by the system prompt is also reported as that, and not as a message that was rewritten."
+        },
+        {
+          "h": "Tools that fail less",
+          "list": [
+            "A call whose arguments are not valid JSON is refused with the parse error and the text around it. It used to be read as an empty call, so the agent was told that a path was missing when its JSON was broken, and the broken text went to the provider again in every later request.",
+            "An edit batch is no longer thrown away because one entry changes nothing: that entry is skipped with a note and the others are applied. A failed edit now names the closest text in the file, or says that the new text is already there.",
+            "Non-ASCII characters in a window title used to reach the agent as a question mark. Dashes, curly quotes and non-breaking spaces no longer stop a title from matching, and a miss names the closest open window.",
+            "The ui tool accepts calls that were clearly meant: a url with no action looks at the page, a url and a port that name the same server agree, element is read as target, and a wait with only a number is a pause.",
+            "A tool called by another program's name, such as bash or question, is pointed to the right one with what it does.",
+            "A line range already in the conversation is not read again, and a file too big to read whole is outlined."
+          ]
+        },
+        {
+          "h": "Sessions and the screen",
+          "list": [
+            "/continue wipes the screen before showing the session you picked, so a second /continue no longer stacks one conversation on another. Fresh start is gone from the picker, and /clear is the way to start over.",
+            "Two saves running at once wrote the same earlier history to disk twice. They now wait for each other, and repeats already on disk are ignored when the file is read.",
+            "Searches are lines in the work row, and a click opens what they printed. Reads open onto their text. Edits that follow each other are one row, with a click on a file's name opening that file's change.",
+            "The slash menu wraps from the last item to the first, and the inline screen cannot be chosen for now because it has too many rough edges."
+          ]
+        },
+        {
+          "h": "The agent",
+          "text": "While it only gathers or tests, the agent stays quiet between calls and reports once. It closes only what it started itself, and an app you closed is reopened only if you have written since, so it can no longer start a program you had just closed on its own between your messages."
+        }
+      ],
+      "images": []
+    },
     {
       "id": "0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-0",
       "kind": "news",
