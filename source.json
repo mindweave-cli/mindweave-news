@@ -1,6 +1,51 @@
 {
   "items": [
     {
+      "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-2",
+      "kind": "news",
+      "date": "2026-10-27",
+      "title": "Mindweave 3.4.2: run it from a script, credit on the agent's commits, and a cache the notes no longer break",
+      "summary": "Mindweave can now do one task from a script with mindweave -p, the agent can put one line of credit on the commits it makes, and the session notes no longer break the provider's cache. A read of several files shows each file on its own line, and --help now agrees with the README. The mwcode app gets this with its next release.",
+      "points": [
+        "mindweave -p \"task\" does one task with no screen and exits, with the answer on its own, JSON output and exit codes a script can read.",
+        "Commits the agent makes can carry a co-author line. It asks once per project, and /coauthor changes the answer.",
+        "The session notes are updated as changes and written on the same request as the conversation, so a refresh costs a fraction of what it did.",
+        "Trimming old context no longer takes anything out of your saved messages.",
+        "A read of several files shows each file on its own line and opens it on its own."
+      ],
+      "sections": [
+        {
+          "h": "Run it from a script",
+          "text": "mindweave -p \"task\" does one task with no screen and exits, so Mindweave can be used from a shell script, a pipeline or a CI job. The answer goes to stdout and nothing else does, anything piped in is added as context, and --output-format json gives one result object with the answer, the session, the tokens and an estimated cost. The exit code says how it ended: 0 done, 1 failed, 2 bad usage, 3 no API key, 4 stopped before it was done. Nobody can answer a question in this mode, so anything that would ask is refused."
+        },
+        {
+          "h": "Credit on the agent's commits",
+          "text": "The first time the agent runs git commit in a project it asks once whether to add a Co-authored-by line to the message, and remembers the answer. It never adds the line to a commit you make yourself. /coauthor shows or changes the answer. The agent also commits on the branch you are on instead of refusing to commit on main."
+        },
+        {
+          "h": "A cache the notes no longer break",
+          "list": [
+            "The notes are updated as changes, not rewritten whole. A refresh that wrote about 6,400 tokens now writes a few hundred.",
+            "While the cache is warm, the notes are written on the same request as the conversation, so the provider reads the conversation from its cache instead of billing it again.",
+            "Old output is cleared from a warm cache only when what it frees is worth more than the rewrite, at the model's own cache prices.",
+            "A compaction summary is corrected only once the cache is cold or another clear is already rewriting that part of the request."
+          ]
+        },
+        {
+          "h": "In the terminal",
+          "list": [
+            "A file's range sits beside its name, and each file of a read that took several is its own line with its own click.",
+            "An opened file is one colour: a tab used to leave a gap between the line numbers and the code.",
+            "A search's sources keep their layout when the list opens, so nothing already on screen moves."
+          ]
+        },
+        {
+          "h": "Help and documentation",
+          "text": "mindweave --help says the program runs on Windows, macOS (Apple silicon) and Linux, needs Node.js 24 or newer, and that the first launch asks for an API key. The README explains the two names, Mindweave and mwcode, and the contributing guide lists Ollama as working."
+        }
+      ]
+    },
+    {
       "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-1",
       "kind": "news",
       "date": "2026-10-18",
