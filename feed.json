@@ -1,8 +1,64 @@
 {
   "v": 1,
-  "seq": 25,
-  "issued": "2026-10-27T10:57:51.044Z",
+  "seq": 26,
+  "issued": "2026-10-30T09:38:51.335Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-3",
+      "kind": "news",
+      "date": "2026-10-30",
+      "title": "Mindweave 3.4.3: more providers, workers that run side by side, and a compaction you can watch",
+      "summary": "LM Studio, llama.cpp and any OpenAI-compatible server now work as providers, up to ten sub-agents can work at once and you can write to a running one, and a compaction shows a live row instead of appearing silently. The mwcode app gets this with its next release.",
+      "points": [
+        "LM Studio and llama.cpp work with no key, and a Custom endpoint takes any server that speaks the OpenAI chat wire.",
+        "A provider can have its own address, with presets for the GLM, Qwen and Kimi coding plans.",
+        "Up to 10 sub-agents run at once, a worker can edit inside a locked scope, and you can switch to a running worker and write to it.",
+        "A compaction shows a pulsing row while it runs and settles into one line with what it freed. A session reopened after the cache expired is compacted as it opens.",
+        "The line that ends a turn, with how long it took and when it finished, is kept when you reopen a session."
+      ],
+      "sections": [
+        {
+          "h": "More places to run it",
+          "list": [
+            "LM Studio and llama.cpp are found on their usual ports while they run and need no key, the way Ollama does.",
+            "A Custom endpoint takes any server that speaks the OpenAI chat wire, such as a hosted gateway or your own vLLM. /endpoint custom opens a box for the address, the key, the model names and the context window.",
+            "A provider can have its own address, and a changed address is used on the next request. Coding plans for GLM, Alibaba's Qwen and Kimi Code are offered as presets.",
+            "The model lists were refreshed. Mindweave now lists 19 providers and 68 models.",
+            "/provider and /key are one screen with two tabs, Providers and Keys. Enter on a provider with no key opens a field for it and switches to that provider once the key is saved."
+          ]
+        },
+        {
+          "h": "Sub-agents that work side by side",
+          "list": [
+            "Up to 10 run at once, with limits so a task that needs one does not start ten: at most 12 workers and 300 steps in a turn, a unique slice name for each, and a refusal for a task that is too short or repeats one already given.",
+            "A worker can edit files when it is given a write scope. Each scope is locked while the worker runs, overlapping scopes are refused, and an edit outside the scope is refused with the reason.",
+            "While workers run, a row under the chat lists them. Left and right switch between them when the message box is empty, and what you type while viewing a worker goes to that worker."
+          ]
+        },
+        {
+          "h": "Compaction you can see",
+          "list": [
+            "A compaction shows a row with a pulsing dot while it runs, then settles into one line such as Compaction complete, context 35% to 14%, 39K tokens freed. The three-line bar block is gone.",
+            "A session reopened after the provider's cache expired is compacted as it opens, from the session notes, instead of waiting for your next message.",
+            "A failed /compact says what to do and no longer counts toward the automatic stop.",
+            "Worked for 1m 28s, the tokens and the time it finished are saved with the session and shown again after /continue."
+          ]
+        },
+        {
+          "h": "Fixes",
+          "list": [
+            "A reply that a check set aside is no longer lost: it is shown and kept last, and sessions saved that way are repaired when opened.",
+            "Provider notices and failed turns come back after /continue.",
+            "A rule, skill, MCP server or forbidden entry can be removed by name or by text, in the project's list and in your own that apply everywhere. A miss lists what exists and is shown on screen.",
+            "Two files dropped together are both attached and show as [mwimg1] [mwimg2].",
+            "Ctrl+F sends your message even during a long model call. It does not stop a running command.",
+            "The session list lines up its time and message-count columns, and the whole selected row turns green.",
+            "Web searches and fetches are one line with live progress and keep every source, edits are never folded into one row, and the image viewer row is hidden."
+          ]
+        }
+      ],
+      "images": []
+    },
     {
       "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-2",
       "kind": "news",
