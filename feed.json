@@ -1,8 +1,55 @@
 {
   "v": 1,
-  "seq": 26,
-  "issued": "2026-10-30T09:38:51.335Z",
+  "seq": 27,
+  "issued": "2026-10-30T14:44:29.878Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-4",
+      "kind": "news",
+      "date": "2026-10-30",
+      "title": "Mindweave 3.4.4: the agent learns how to work with you, remembers why, and knows what it has",
+      "summary": "The agent now gets better the more you work with it. It learns from what goes wrong, remembers what you told it and why a choice was made, and knows which tools it has, so you say things once. It all happens in the background, with nothing to set up. The mwcode app gets this with its next release.",
+      "points": [
+        "The agent keeps lessons: how things run in your project and how you want work done. Say something once and it carries into later sessions.",
+        "When something fails twice and then works, it works out what made the difference, so the next session does not pay for the same attempts.",
+        "It keeps what the code cannot show: a decision and why, an approach that was ruled out, where a long piece of work was left.",
+        "It corrects or deletes what turned out wrong, and goes over everything it keeps once in a while.",
+        "It is told its MCP servers and every tool name, and follows a server's own instructions."
+      ],
+      "sections": [
+        {
+          "h": "It learns how to work with you",
+          "list": [
+            "After a turn that gives it a reason to, the agent looks back and decides for itself what is worth keeping. Say \"never add a co-author line\" or \"don't touch the changelog\" once, and it carries that into later sessions.",
+            "It learns from its own trouble, and it keeps what you confirmed as well as what you corrected, so it holds on to what already works.",
+            "A lesson about a command or a file is put in front of the agent right before it runs that command or edits that file.",
+            "It corrects or deletes a lesson that turned out wrong, a lesson whose advice keeps failing stops being used, and \"forget that\" works.",
+            "If your message says it is off track, or the same thing has failed twice, it is told to work out what it assumed and try a different approach."
+          ]
+        },
+        {
+          "h": "It remembers why",
+          "list": [
+            "The same look back saves what the code will never show: a decision and why it was made, an approach that was ruled out, who the work is for, a deadline, and where a long piece of work was left.",
+            "A later session knows why you chose something, and does not argue over it or test it again.",
+            "MINDWEAVE.md is now kept to the technical record. A lesson is how to behave, a memory is what is true, and MINDWEAVE.md is how the project works."
+          ]
+        },
+        {
+          "h": "It knows what tools it has",
+          "list": [
+            "The agent is told each connected MCP server and every tool name, without disturbing the prompt cache. It used to know nothing about them past 25 tools until a search happened to find some.",
+            "What an MCP server says about how to use it now reaches the agent, marked as coming from the server. If those words change after you first trusted them, they are held back until you allow them.",
+            "find_tools says first how many tools matched, and grep, glob and folder listings say at the top when a list was cut."
+          ]
+        },
+        {
+          "h": "Your data and your control",
+          "text": "Lessons rank below your rules and MINDWEAVE.md and can never loosen a permission, an approval or a check. They are written only from your words and the agent's own steps, never from a web page, a file or a tool's output. They are plain files on your machine, a new install starts empty, and MINDWEAVE_LESSONS=0 switches all of this off."
+        }
+      ],
+      "images": []
+    },
     {
       "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-3",
       "kind": "news",
