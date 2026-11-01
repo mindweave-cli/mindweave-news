@@ -1,6 +1,53 @@
 {
   "items": [
     {
+      "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-5",
+      "kind": "news",
+      "date": "2026-11-01",
+      "title": "Mindweave 3.4.5: the agent tells you what it built",
+      "summary": "When the agent finishes something, it now tells you what you got. Before, a whole new page could end with only \"I checked it, nothing to fix\". It also gets stuck less: if one way of doing something fails, it tries another. The mwcode app gets this with its next release.",
+      "points": [
+        "A real report when the work is done: a small fix takes a line or two, and a new page or feature gets a proper description.",
+        "No more \"No build or test suite applies here\". A check that went fine does not need mentioning, and a problem always does.",
+        "Opening a page in the browser now counts as checking it.",
+        "If one way fails it tries another, such as a shell command when an edit will not apply. Anything protected or declined is still left to you.",
+        "Cursor rules are read, long files no longer get cut off on DeepSeek, and there are fewer false refusals."
+      ],
+      "sections": [
+        {
+          "h": "It tells you what it did",
+          "list": [
+            "The length of the final message now follows the work. The old limit of four lines after any change is gone.",
+            "If a check found a problem or could not be run, the agent says so. If it went fine, it does not need to mention it.",
+            "If the agent is sent back to check its work, what it had already written is kept. A one-line excuse can no longer replace it.",
+            "It no longer closes every turn by offering more work, and it does what you asked instead of asking whether it should."
+          ]
+        },
+        {
+          "h": "It gets stuck less",
+          "list": [
+            "Changing a file with a shell command is fine. When an edit will not apply it can use a command, and when a command fails or is refused it can use the edit tools.",
+            "Long files no longer get cut off on DeepSeek. A reply used to stop at about 8,000 tokens, and the limit is now 64,000.",
+            "A command containing CSS text or a registry path is no longer refused as if it were reading a protected file. `.env` stays protected.",
+            "A lesson about a kind of file no longer stops ordinary edits. It only stops a call when it is about that exact command or file."
+          ]
+        },
+        {
+          "h": "It remembers better",
+          "list": [
+            "A lesson now keeps your request as you made it, and a saved note is removed when finished work makes it untrue."
+          ]
+        },
+        {
+          "h": "Also new",
+          "list": [
+            "`.cursorrules` and the rules in `.cursor/rules` that apply to the whole project now load at the start of a session, the same way as `AGENTS.md`.",
+            "MCP sign-in is more reliable, and a server that changes its instructions is now described in plain words."
+          ]
+        }
+      ]
+    },
+    {
       "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-4",
       "kind": "news",
       "date": "2026-10-30",
