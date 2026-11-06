@@ -1,8 +1,50 @@
 {
   "v": 1,
-  "seq": 28,
-  "issued": "2026-11-01T11:14:32.764Z",
+  "seq": 29,
+  "issued": "2026-11-06T19:19:34.177Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-6",
+      "kind": "news",
+      "date": "2026-11-06",
+      "title": "Mindweave 3.4.6: updates install while you work, and a public Data page",
+      "summary": "Updates now install in the background while you are not working, and a small green tag at the right of the status row tells you when the new version is ready: close and reopen Mindweave, or type /update. There is also a new /data command, and a public Data page that shows which models perform best. The mwcode app gets this with its next release.",
+      "points": [
+        "A newer version installs by itself while you are not working, beside the one you are using. Nothing is replaced under you.",
+        "A green tag at the right end of the status row says it is ready. Type /update and Mindweave restarts into the same conversation, with no question.",
+        "When /update has to install, you get a full-screen wait message with a timer, and the first start on a new version lists what changed, once.",
+        "/data shows your own usage and controls a daily count of tokens by model. It is on by default, says so at every start, and turns off with /data.",
+        "Tighter limits on what a project, a page or a server can make the agent do."
+      ],
+      "sections": [
+        {
+          "h": "Updates install in the background",
+          "list": [
+            "After two quiet minutes with nothing running, Mindweave downloads a newer release into a folder of its own and checks that it starts. The copy you are using is left alone.",
+            "A version that cannot start is set aside, and the one before it is used instead. MINDWEAVE_NO_MANAGED=1 turns the whole thing off.",
+            "The install no longer gets your provider keys in its environment."
+          ]
+        },
+        {
+          "h": "/data and the Data page",
+          "list": [
+            "/data shows your usage on this computer, shows the exact message before anything is sent, and turns the count off.",
+            "The count is one small message a day with a random id, the version, your system and, for each model, tokens in, from the cache and out. It never holds a prompt, a reply, a file, a path, a project name or a key.",
+            "The numbers are shown for everyone at mindweavedev.netlify.app/data: which models perform best, the cache hit rate, and where in the world Mindweave runs. Your past usage is only sent if you choose it in /data.",
+            "Nothing is counted from tests, scratch runs, CI, a source checkout or a script."
+          ]
+        },
+        {
+          "h": "Tighter limits",
+          "list": [
+            "MCP tools ask before they run in Sentinel mode and are hidden in read-only turns, and MCP sign-in is stricter.",
+            "The browser tool asks before opening a page on a private network, and a project can no longer replace your provider key.",
+            "A few more kinds of command now ask first in Sentinel mode, and a command can no longer edit Mindweave own settings files."
+          ]
+        }
+      ],
+      "images": []
+    },
     {
       "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-5",
       "kind": "news",
