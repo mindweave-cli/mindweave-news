@@ -1,8 +1,38 @@
 {
   "v": 1,
-  "seq": 29,
-  "issued": "2026-11-06T19:19:34.177Z",
+  "seq": 30,
+  "issued": "2026-11-06T23:37:57.525Z",
   "items": [
+    {
+      "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-7",
+      "kind": "news",
+      "date": "2026-11-07",
+      "title": "Mindweave 3.4.7: the daily count is on for everyone",
+      "summary": "The daily count behind the public Data page is now on by default for every install, so nobody has to find /data and turn it on. The start-up line says it is on and what is shared, and /data turns it off, or just your past. Everything else works the same as 3.4.6. The mwcode app gets this with its next release.",
+      "points": [
+        "The daily count of tokens by model is on by default for everyone, including installs where the older count had been switched off.",
+        "Your last 60 days are shared once, with the first count, and the start-up line says so. /data turns off the past, or everything.",
+        "The count goes out when your next turn finishes, and /data now says so. It never holds a prompt, a reply, a file, a path, a project name or a key.",
+        "Everything else works the same as 3.4.6."
+      ],
+      "sections": [
+        {
+          "h": "The daily count is on for everyone",
+          "list": [
+            "Nobody has to find /data and turn it on. A leftover off from an older version no longer keeps it off.",
+            "The start-up line says that Data is on, what it shares, where to see the numbers at mindweavedev.netlify.app/data, and where to read how it is sent.",
+            "/data shows your own usage and the exact message, and turns off the past data or all of it."
+          ]
+        },
+        {
+          "h": "What stays the same",
+          "list": [
+            "Updates still install in the background, and the limits on what a project, a page or a server can make the agent do are unchanged."
+          ]
+        }
+      ],
+      "images": []
+    },
     {
       "id": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-mindweave-3-4-6",
       "kind": "news",
